@@ -1,11 +1,12 @@
 # Auto-generated file
-from src.nlp.config import PAGE_URL, HEADERS, RAW_HTML_PATH, PROCESSED_CSV_PATH
-from src.nlp.extract import run_extract
-from src.nlp.validate import run_validate
-from src.nlp.transform import run_transform
-from src.nlp.analyze import run_analyze
-from src.nlp.load import run_load
 from pathlib import Path
+
+from src.nlp.analyze import run_analyze
+from src.nlp.config import HEADERS, PAGE_URL, PROCESSED_CSV_PATH, RAW_HTML_PATH
+from src.nlp.extract import run_extract
+from src.nlp.load import run_load
+from src.nlp.transform import run_transform
+from src.nlp.validate import run_validate
 
 
 def main():

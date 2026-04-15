@@ -1,8 +1,9 @@
 # Auto-generated file
 import re
 import string
-from bs4 import BeautifulSoup
+
 import pandas as pd
+from bs4 import BeautifulSoup
 
 
 def clean_text(text: str) -> str:
@@ -41,8 +42,10 @@ def run_transform(soup: BeautifulSoup) -> pd.DataFrame:
     # Metrics
     token_count = len(tokens)
     unique_token_count = len(set(tokens))
-    type_token_ratio = round(unique_token_count / token_count, 4) if token_count > 0 else 0
-
+    if token_count > 0:
+        type_token_ratio = round(unique_token_count / token_count, 4)
+    else:
+        type_token_ratio = 0
     # Build DataFrame
     data = {
         "raw_text": raw_text[:500],  # shortened for readability
@@ -50,7 +53,7 @@ def run_transform(soup: BeautifulSoup) -> pd.DataFrame:
         "token_count": token_count,
         "unique_token_count": unique_token_count,
         "type_token_ratio": type_token_ratio,
-        "tokens": " ".join(tokens[:50])
+        "tokens": " ".join(tokens[:50]),
     }
 
     df = pd.DataFrame([data])

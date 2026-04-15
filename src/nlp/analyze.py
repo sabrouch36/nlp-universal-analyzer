@@ -1,9 +1,10 @@
 # Auto-generated file
 from collections import Counter
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
 from pathlib import Path
+
+import matplotlib.pyplot as plt
 import pandas as pd
+from wordcloud import WordCloud
 
 
 def run_analyze(df: pd.DataFrame, output_dir: Path):

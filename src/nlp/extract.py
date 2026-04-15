@@ -1,6 +1,7 @@
 # Auto-generated file
-import requests
 from pathlib import Path
+
+import requests
 
 
 def run_extract(url: str, headers: dict, output_path: Path) -> str:
